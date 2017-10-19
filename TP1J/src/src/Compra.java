@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Compra {
 	
 	private ArrayList<Producto> productosAComprar;
-	private double precioTotal;
+	private int precioTotal;
 	
 	public Compra() {
 		this.productosAComprar = new ArrayList<Producto>();
@@ -17,8 +17,28 @@ public class Compra {
 		return compra;
 	}
 
-	public double getPrecioTotal() {
+	public int getPrecioTotal() {
 		return precioTotal;
+	}
+
+	public void agregarProductoEnCompra(Producto producto) {
+		productosAComprar.add(producto);
+		precioTotal = precioTotal + producto.getPrecio();
+	}
+
+	public static Compra crearNuevaCompraConEnvio() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public static Compra crearNuevaCompraConGarantia() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public static Compra crearNuevaCompraConEnvioYGarantia() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

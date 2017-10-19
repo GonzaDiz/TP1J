@@ -46,7 +46,7 @@ public class AlgoBayTest {
 	public void testGetProductoAPartirDelNombreVictorinoxDevuelveProductoConNombreVictorinox() {
 		Producto producto;
 		AlgoBay algoBay = new AlgoBay();
-		algoBay.agregarProductoConPrecio("Victorinox", 599.99);
+		algoBay.agregarProductoConPrecio("Victorinox", 600);
 		producto = algoBay.getProducto("Victorinox");
 		Assert.assertEquals("Victorinox", producto.getNombre());
 	}
@@ -69,7 +69,9 @@ public class AlgoBayTest {
 	@Test 
 	public void testGetPrecioTotalDeUnaNuevaCompraConUnProductoDe100PesosDevuelve100Pesos() {
 		AlgoBay algoBay = new AlgoBay();
+		Producto producto = algoBay.agregarProductoConPrecio("Spinner Azul", 100);
 		Compra compra = algoBay.crearNuevaCompra();
+		compra.agregarProductoEnCompra(producto);
 		Assert.assertEquals(100, algoBay.getPrecioTotalDe(compra));
 	}
 	

@@ -3,15 +3,19 @@ package src;
 
 public class Producto {
 	private String nombre;
-	private double precio;
+	private int precio;
 	
-	public Producto(String nombre, double precio) {
+	public Producto(String nombre, int precio) {
 		this.nombre = nombre;
 		this.precio = precio;
 	}
 
 	public Object getNombre() {
 		return nombre;
+	}
+
+	public int getPrecio() {
+		return precio;
 	}
 
 }

@@ -13,7 +13,7 @@ public class AlgoBay {
 		return catalogo.getCantidadDeProductos();
 	}
 
-	public Producto agregarProductoConPrecio(String nombre, double precio) {
+	public Producto agregarProductoConPrecio(String nombre, int precio) {
 		return catalogo.agregarProductoConPrecio(nombre,precio);
 	}
 
@@ -21,8 +21,8 @@ public class AlgoBay {
 		return catalogo.getProducto(nombre);
 	}
 
-	public void agregarProductoEnCompra(Producto productoZapatillaNike, Compra compraConEnvioYGarantia) {
-		// TODO Auto-generated method stub
+	public void agregarProductoEnCompra(Producto producto, Compra compra) {
+		compra.agregarProductoEnCompra(producto);
 		
 	}
 
@@ -30,23 +30,20 @@ public class AlgoBay {
 		return Compra.crearNuevaCompra();
 	}
 
-	public double getPrecioTotalDe(Compra compra) {
+	public int getPrecioTotalDe(Compra compra) {
 		return compra.getPrecioTotal();
 	}
 
 	public Compra crearNuevaCompraConEnvio() {
-		// TODO Auto-generated method stub
-		return null;
+		return Compra.crearNuevaCompraConEnvio();
 	}
 
 	public Compra crearNuevaCompraConGarantia() {
-		// TODO Auto-generated method stub
-		return null;
+		return Compra.crearNuevaCompraConGarantia();
 	}
 
 	public Compra crearNuevaCompraConEnvioYGarantia() {
-		// TODO Auto-generated method stub
-		return null;
+		return Compra.crearNuevaCompraConEnvioYGarantia();
 	}
 
 	public Cupon crearCuponConPorcentaje(int i) {
