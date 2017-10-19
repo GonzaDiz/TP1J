@@ -2,18 +2,23 @@ package src;
 
 
 public class AlgoBay {
+	
+	private int cantidadDeProductos;
+
+	public AlgoBay() {
+		this.cantidadDeProductos = 0;
+	}
 
 	public Object getCantidadDeProductos() {
-		// TODO Auto-generated method stub
+		return cantidadDeProductos;
+	}
+
+	public Producto agregarProductoConPrecio(String nombre, double precio) {
+		this.cantidadDeProductos++;
 		return null;
 	}
 
-	public Producto agregarProductoConPrecio(String string, int i) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public Producto getProducto(String string) {
+	public Producto getProducto(String nombre) {
 		// TODO Auto-generated method stub
 		return null;
 	}
