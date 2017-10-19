@@ -4,8 +4,10 @@ package catedraTest;
 import org.junit.Assert;
 import org.junit.Test;
 
-import AlgoBay;
-import Producto;
+import src.AlgoBay;
+import src.Compra;
+import src.Cupon;
+import src.Producto;
 
 
 public class AlgoBayTest {
