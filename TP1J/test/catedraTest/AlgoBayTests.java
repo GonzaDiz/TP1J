@@ -1,12 +1,12 @@
 package catedraTest;
 
+
 import org.junit.Assert;
 import org.junit.Test;
 
-import fiuba.algo3.tp1.AlgoBay;
-import fiuba.algo3.tp1.Compra;
-import fiuba.algo3.tp1.Cupon;
-import fiuba.algo3.tp1.Producto;
+import AlgoBay;
+import Producto;
+
 
 public class AlgoBayTest {
 	
@@ -14,7 +14,7 @@ public class AlgoBayTest {
 
 	@Test
 	public void test01AgregarProductos() {
-		
+			
 		AlgoBay algoBay = new AlgoBay();
 		
 		Assert.assertEquals(algoBay.getCantidadDeProductos(),0);
