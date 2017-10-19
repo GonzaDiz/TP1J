@@ -3,24 +3,22 @@ package src;
 
 public class AlgoBay {
 	
-	private int cantidadDeProductos;
+	private Catalogo catalogo;
 
 	public AlgoBay() {
-		this.cantidadDeProductos = 0;
+		this.catalogo = new Catalogo();
 	}
 
-	public Object getCantidadDeProductos() {
-		return cantidadDeProductos;
+	public int getCantidadDeProductos() {
+		return catalogo.getCantidadDeProductos();
 	}
 
 	public Producto agregarProductoConPrecio(String nombre, double precio) {
-		this.cantidadDeProductos++;
-		return null;
+		return catalogo.agregarProductoConPrecio(nombre,precio);
 	}
 
 	public Producto getProducto(String nombre) {
-		// TODO Auto-generated method stub
-		return null;
+		return catalogo.getProducto(nombre);
 	}
 
 	public void agregarProductoEnCompra(Producto productoZapatillaNike, Compra compraConEnvioYGarantia) {
@@ -29,13 +27,11 @@ public class AlgoBay {
 	}
 
 	public Compra crearNuevaCompra() {
-		// TODO Auto-generated method stub
-		return null;
+		return Compra.crearNuevaCompra();
 	}
 
-	public int getPrecioTotalDe(Compra compra) {
-		// TODO Auto-generated method stub
-		return 0;
+	public double getPrecioTotalDe(Compra compra) {
+		return compra.getPrecioTotal();
 	}
 
 	public Compra crearNuevaCompraConEnvio() {

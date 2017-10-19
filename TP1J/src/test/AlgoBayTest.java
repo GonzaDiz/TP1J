@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import src.AlgoBay;
+import src.Compra;
 import src.Producto;
 
 public class AlgoBayTest {
@@ -42,14 +43,37 @@ public class AlgoBayTest {
 	}
 	
 	@Test 
-	public void testGetProductoAPartirDelNombreVictorinoxDevuelveElProductoVictorinox() {
-		Object producto;
-		Producto victorinox = new Producto("Victorinox", 599.99);
+	public void testGetProductoAPartirDelNombreVictorinoxDevuelveProductoConNombreVictorinox() {
+		Producto producto;
 		AlgoBay algoBay = new AlgoBay();
 		algoBay.agregarProductoConPrecio("Victorinox", 599.99);
 		producto = algoBay.getProducto("Victorinox");
-		Assert.assertEquals(victorinox, producto);
+		Assert.assertEquals("Victorinox", producto.getNombre());
 	}
 	
+	@Test
+	public void testCrearCompraNoEsNull() {
+		Compra compra;
+		AlgoBay algoBay = new AlgoBay();
+		compra = algoBay.crearNuevaCompra();
+		Assert.assertNotNull(compra);
+	}
+	
+	@Test
+	public void testGetPrecioTotalDeUnaNuevaCompraEs0() {
+		AlgoBay algoBay = new AlgoBay();
+		Compra compra = algoBay.crearNuevaCompra();
+		Assert.assertEquals(0, algoBay.getPrecioTotalDe(compra));
+	}
+	
+	@Test 
+	public void testGetPrecioTotalDeUnaNuevaCompraConUnProductoDe100PesosDevuelve100Pesos() {
+		AlgoBay algoBay = new AlgoBay();
+		Compra compra = algoBay.crearNuevaCompra();
+		Assert.assertEquals(100, algoBay.getPrecioTotalDe(compra));
+	}
+	
+//	@Test
+//	public void testAgregarProductoEnCompra
 
 }

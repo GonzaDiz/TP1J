@@ -2,9 +2,16 @@ package src;
 
 
 public class Producto {
-
+	private String nombre;
+	private double precio;
+	
 	public Producto(String nombre, double precio) {
-		// TODO Auto-generated constructor stub
+		this.nombre = nombre;
+		this.precio = precio;
+	}
+
+	public Object getNombre() {
+		return nombre;
 	}
 
 }
