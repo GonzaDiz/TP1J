@@ -75,7 +75,5 @@ public class AlgoBayTest {
 		Assert.assertEquals(100, algoBay.getPrecioTotalDe(compra));
 	}
 	
-//	@Test
-//	public void testAgregarProductoEnCompra
 
 }

@@ -6,10 +6,12 @@ public class Compra {
 	
 	private ArrayList<Producto> productosAComprar;
 	private int precioTotal;
+	private ArrayList<Servicio> servicios;
 	
 	public Compra() {
 		this.productosAComprar = new ArrayList<Producto>();
 		this.precioTotal = 0;
+		this.servicios = new ArrayList<Servicio>();
 	}
 
 	public static Compra crearNuevaCompra() {
@@ -18,6 +20,9 @@ public class Compra {
 	}
 
 	public int getPrecioTotal() {
+		for (Servicio s : servicios ) {
+			precioTotal = s.modificarPrecio(precioTotal);
+		}
 		return precioTotal;
 	}
 
@@ -27,18 +32,33 @@ public class Compra {
 	}
 
 	public static Compra crearNuevaCompraConEnvio() {
-		// TODO Auto-generated method stub
-		return null;
+		Compra compra = new Compra();
+		compra.agregarEnvio();
+		return compra;
+	}
+
+	private void agregarEnvio() {
+		Envio envio = new Envio();
+		servicios.add(envio);
 	}
 
 	public static Compra crearNuevaCompraConGarantia() {
-		// TODO Auto-generated method stub
-		return null;
+		Compra compra = new Compra();
+		compra.agregarGarantia();
+		return compra;
+	}
+
+	private void agregarGarantia() {
+		Garantia garantia = new Garantia();
+		servicios.add(garantia);
+		
 	}
 
 	public static Compra crearNuevaCompraConEnvioYGarantia() {
-		// TODO Auto-generated method stub
-		return null;
+		Compra compra = new Compra();
+		compra.agregarGarantia();
+		compra.agregarEnvio();
+		return compra;
 	}
 
 }
