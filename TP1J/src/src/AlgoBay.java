@@ -30,7 +30,7 @@ public class AlgoBay {
 		return Compra.crearNuevaCompra();
 	}
 
-	public int getPrecioTotalDe(Compra compra) {
+	public double getPrecioTotalDe(Compra compra) {
 		return compra.getPrecioTotal();
 	}
 
@@ -46,14 +46,13 @@ public class AlgoBay {
 		return Compra.crearNuevaCompraConEnvioYGarantia();
 	}
 
-	public Cupon crearCuponConPorcentaje(int i) {
-		// TODO Auto-generated method stub
-		return null;
+	public Cupon crearCuponConPorcentaje(int porcentaje) {
+		ConCupon cupon = new ConCupon();
+		return Cupon.crearCuponConPorcentaje(porcentaje);
 	}
 
-	public void agregarCuponEnCompra(Cupon cupon20Porciento, Compra compraConEnvio) {
-		// TODO Auto-generated method stub
-		
+	public void agregarCuponEnCompra(Cupon cupon, Compra compra) {
+		compra.agregarCupon(cupon);
 	}
 
 

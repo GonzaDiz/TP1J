@@ -5,13 +5,15 @@ import java.util.ArrayList;
 public class Compra {
 	
 	private ArrayList<Producto> productosAComprar;
-	private int precioTotal;
+	private double precioTotal;
 	private ArrayList<Servicio> servicios;
+	private Cupon cupon;
 	
 	public Compra() {
 		this.productosAComprar = new ArrayList<Producto>();
 		this.precioTotal = 0;
 		this.servicios = new ArrayList<Servicio>();
+		this.cupon = new SinCupon();
 	}
 
 	public static Compra crearNuevaCompra() {
@@ -19,7 +21,7 @@ public class Compra {
 		return compra;
 	}
 
-	public int getPrecioTotal() {
+	public double getPrecioTotal() {
 		for (Servicio s : servicios ) {
 			precioTotal = s.modificarPrecio(precioTotal);
 		}
@@ -51,7 +53,6 @@ public class Compra {
 	private void agregarGarantia() {
 		Garantia garantia = new Garantia();
 		servicios.add(garantia);
-		
 	}
 
 	public static Compra crearNuevaCompraConEnvioYGarantia() {
@@ -59,6 +60,10 @@ public class Compra {
 		compra.agregarGarantia();
 		compra.agregarEnvio();
 		return compra;
+	}
+
+	public void agregarCupon(Cupon cupon) {
+		this.cupon = cupon;
 	}
 
 }

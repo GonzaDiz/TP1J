@@ -58,9 +58,9 @@ public class AlgoBayTest {
 		algoBay.agregarProductoEnCompra(productoZapatillaNike,compra);
 		algoBay.agregarProductoEnCompra(productoMotoG,compra);
 
-		int precio = algoBay.getPrecioTotalDe(compra);
+		double precio = algoBay.getPrecioTotalDe(compra);
 		
-		Assert.assertEquals(precio,6400);
+		Assert.assertEquals(precio,6400,DELTA);
 	}
 	
 	
@@ -77,10 +77,10 @@ public class AlgoBayTest {
 		algoBay.agregarProductoEnCompra(productoZapatillaNike,compraSimple);
 		algoBay.agregarProductoEnCompra(productoZapatillaNike,compraConEnvio);
 
-		int precioSimple = algoBay.getPrecioTotalDe(compraSimple);
-		int precioConEnvio = algoBay.getPrecioTotalDe(compraConEnvio);
+		double precioSimple = algoBay.getPrecioTotalDe(compraSimple);
+		double precioConEnvio = algoBay.getPrecioTotalDe(compraConEnvio);
 
-		Assert.assertEquals(precioSimple+100,precioConEnvio);
+		Assert.assertEquals(precioSimple+100,precioConEnvio,DELTA);
 	}
  
 	
@@ -97,8 +97,8 @@ public class AlgoBayTest {
 		algoBay.agregarProductoEnCompra(productoZapatillaNike,compraSimpleConGarantia);
 		algoBay.agregarProductoEnCompra(productoZapatillaNike,compraConEnvioYGarantia);
 
-		int precioSimpleConGarantia = algoBay.getPrecioTotalDe(compraSimpleConGarantia);
-		int precioConEnvioYGarantia = algoBay.getPrecioTotalDe(compraConEnvioYGarantia);
+		double precioSimpleConGarantia = algoBay.getPrecioTotalDe(compraSimpleConGarantia);
+		double precioConEnvioYGarantia = algoBay.getPrecioTotalDe(compraConEnvioYGarantia);
 
 		Assert.assertEquals(precioSimpleConGarantia,2000*1.1,DELTA);
 		Assert.assertEquals(precioConEnvioYGarantia,(2000*1.1)+100,DELTA);
@@ -118,7 +118,7 @@ public class AlgoBayTest {
 		algoBay.agregarProductoEnCompra(productoZapatillaNike,compraConEnvioYGarantia);
 		algoBay.agregarProductoEnCompra(productoMotoG,compraConEnvioYGarantia);
 
-		int precioConEnvioYGarantia = (6000*1.1)+0;//algoBay.getPrecioTotalDe(compraConEnvioYGarantia);
+		double precioConEnvioYGarantia = (6000*1.1)+0;//algoBay.getPrecioTotalDe(compraConEnvioYGarantia);
 
 		Assert.assertEquals(precioConEnvioYGarantia,(6000*1.1)+0,DELTA);
 	}
@@ -136,7 +136,7 @@ public class AlgoBayTest {
 		algoBay.agregarCuponEnCompra(cupon20Porciento,compraConEnvio);
 		algoBay.agregarProductoEnCompra(productoZapatillaNike,compraConEnvio);
 
-		int precioConDescuento = algoBay.getPrecioTotalDe(compraConEnvio);
+		double precioConDescuento = algoBay.getPrecioTotalDe(compraConEnvio);
 
 		Assert.assertEquals(precioConDescuento,(2000+100)*0.8,DELTA);
 	}
@@ -159,7 +159,7 @@ public class AlgoBayTest {
 
 		algoBay.agregarProductoEnCompra(productoZapatillaNike,compra);
 
-		int precioConDescuento = algoBay.getPrecioTotalDe(compra);
+		double precioConDescuento = algoBay.getPrecioTotalDe(compra);
 
 		Assert.assertEquals(precioConDescuento,2000*0.7,DELTA);
 	}

@@ -1,5 +1,5 @@
 package src;
 
-public class Cupon {
+public abstract class Cupon {
 
 }
