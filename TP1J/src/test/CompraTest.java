@@ -13,7 +13,7 @@ public class CompraTest {
 		Compra compraConEnvio = Compra.crearNuevaCompraConEnvio();
 		Producto producto = new Producto("Toner HP 1020",100);
 		compraConEnvio.agregarProductoEnCompra(producto);
-		Assert.assertEquals(200, compraConEnvio.getPrecioTotal());
+		Assert.assertEquals(200, compraConEnvio.getPrecioTotal(),0);
 	}
 	
 	@Test
@@ -21,7 +21,7 @@ public class CompraTest {
 		Compra compraConGarantia = Compra.crearNuevaCompraConGarantia();
 		Producto producto = new Producto("Toner CE505",200);
 		compraConGarantia.agregarProductoEnCompra(producto);
-		Assert.assertEquals(220, compraConGarantia.getPrecioTotal());
+		Assert.assertEquals(220, compraConGarantia.getPrecioTotal(),0);
 	}
 
 }

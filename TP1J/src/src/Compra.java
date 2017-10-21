@@ -25,6 +25,7 @@ public class Compra {
 		for (Servicio s : servicios ) {
 			precioTotal = s.modificarPrecio(precioTotal);
 		}
+		precioTotal = cupon.modificarPrecio(precioTotal);
 		return precioTotal;
 	}
 
