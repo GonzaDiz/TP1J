@@ -21,10 +21,16 @@ public class Catalogo {
 	}
 
 	public Producto getProducto(String nombre) {
-		for (Producto p : productos) {
-			if(nombre.equals(p.getNombre())) {
-				return p;
-			}
+		try {
+			for (Producto p : productos) {
+				if(nombre.equals(p.getNombre())) {
+					return p;
+				}
+			}	
+			throw new NombreDeProductoErroneo();
+		}
+		catch (NombreDeProductoErroneo ex) {
+			
 		}
 		return null;
 	}
