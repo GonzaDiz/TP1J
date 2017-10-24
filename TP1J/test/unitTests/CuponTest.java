@@ -1,4 +1,6 @@
-package test;
+package unitTests;
+
+
 
 public class CuponTest {
 
