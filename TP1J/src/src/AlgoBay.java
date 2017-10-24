@@ -47,8 +47,8 @@ public class AlgoBay {
 	}
 
 	public Cupon crearCuponConPorcentaje(int porcentaje) {
-		ConCupon conCupon = new ConCupon(porcentaje);
-		return conCupon;
+		Cupon cupon = new Cupon(porcentaje);
+		return cupon;
 	}
 
 	public void agregarCuponEnCompra(Cupon cupon, Compra compra) {

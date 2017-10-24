@@ -61,6 +61,21 @@ public class AlgoBayTest {
 		Assert.assertNotNull(compra);
 	}
 	
+
+	@Test
+	public void testCrearCompraConEnvioNoEsNull() {
+		AlgoBay algoBay = new AlgoBay();
+		Compra compra = algoBay.crearNuevaCompraConEnvio();
+		Assert.assertNotNull(compra);
+	}
+	
+	@Test
+	public void testCrearCompraConGarantiaNoEsNull() {
+		AlgoBay algoBay = new AlgoBay();
+		Compra compraConGarantia = algoBay.crearNuevaCompraConGarantia();
+		Assert.assertNotNull(compraConGarantia);
+	}
+	
 	@Test
 	public void testGetPrecioTotalDeUnaNuevaCompraEs0() {
 		AlgoBay algoBay = new AlgoBay();
@@ -75,6 +90,35 @@ public class AlgoBayTest {
 		Compra compra = algoBay.crearNuevaCompra();
 		compra.agregarProducto(producto);
 		Assert.assertEquals(100, algoBay.getPrecioTotalDe(compra),0);
+	}
+	
+	@Test
+	public void testGetPrecioTotalDeUnaCompraConEnvioDe5000PesosDevuelve5000() {
+		AlgoBay algoBay = new AlgoBay();
+		Producto producto = algoBay.agregarProductoConPrecio("GTX 1070", 8700);
+		Compra compra = algoBay.crearNuevaCompraConEnvio();
+		compra.agregarProducto(producto);
+		Assert.assertEquals(8700,algoBay.getPrecioTotalDe(compra),0);
+	}
+	
+	@Test
+	public void testGetPrecioTotalDeUnaCompraDe400ConGarantiaDevuelve440() {
+		AlgoBay algoBay = new AlgoBay();
+		Producto producto = algoBay.agregarProductoConPrecio("Vaso de Cristal", 400);
+		Compra compra = algoBay.crearNuevaCompraConGarantia();
+		compra.agregarProducto(producto);
+		Assert.assertEquals(400*1.1,algoBay.getPrecioTotalDe(compra),0);
+	}
+	
+	@Test
+	public void testGetPrecioTotalDeUnacompraDe5999ConGarantiaYEnvioDevuelve5999MasSu10PorCiento() {
+		AlgoBay algoBay = new AlgoBay();
+		Producto producto = algoBay.agregarProductoConPrecio("Gabinete Corsair", 2999);
+		Producto producto2 = algoBay.agregarProductoConPrecio("Fuente ThermalTake", 3000);
+		Compra compra = algoBay.crearNuevaCompraConEnvioYGarantia();
+		compra.agregarProducto(producto2);
+		compra.agregarProducto(producto);
+		Assert.assertEquals((2999+3000)*1.1, algoBay.getPrecioTotalDe(compra),0);
 	}
 	
 

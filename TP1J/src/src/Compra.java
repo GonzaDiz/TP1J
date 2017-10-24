@@ -13,7 +13,7 @@ public class Compra {
 		this.productosAComprar = new ArrayList<Producto>();
 		this.precioTotal = 0;
 		this.servicios = new ArrayList<Servicio>();
-		this.cupon = new SinCupon();
+		this.cupon = new Cupon();
 	}
 
 	public static Compra crearNuevaCompra() {

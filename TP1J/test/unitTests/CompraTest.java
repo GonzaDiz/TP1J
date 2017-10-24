@@ -6,7 +6,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import src.Compra;
-import src.ConCupon;
 import src.Cupon;
 import src.Producto;
 
@@ -67,7 +66,7 @@ public class CompraTest {
 		
 		Compra compraConGarantia = Compra.crearNuevaCompraConGarantia();
 		Producto producto = new Producto("Pack Resaltadores",100);
-		Cupon cupon = new ConCupon(10);
+		Cupon cupon = new Cupon(10);
 		compraConGarantia.agregarCupon(cupon);
 		compraConGarantia.agregarProducto(producto);
 		Assert.assertEquals((100*1.1)*0.9, compraConGarantia.getPrecioTotal(),DELTA);
@@ -77,7 +76,7 @@ public class CompraTest {
 	public void testGetPrecioTotalDeUnaCompraConUnProductoDe1000YUnCuponDe40PorCientoDevuelve600() {
 		Compra compra = Compra.crearNuevaCompra();
 		Producto producto = new Producto("Fuente",1000);
-		Cupon cupon = new ConCupon(40);
+		Cupon cupon = new Cupon(40);
 		compra.agregarCupon(cupon);
 		compra.agregarProducto(producto);
 		Assert.assertEquals(1000*0.6, compra.getPrecioTotal(),DELTA);
@@ -98,7 +97,7 @@ public class CompraTest {
 		Compra compraConEnvioYGarantia = Compra.crearNuevaCompraConEnvioYGarantia();
 		Producto producto = new Producto("Resma A4", 499.43);
 		compraConEnvioYGarantia.agregarProducto(producto);
-		Cupon cupon = new ConCupon(20);
+		Cupon cupon = new Cupon(20);
 		compraConEnvioYGarantia.agregarCupon(cupon);
 		Assert.assertEquals((499.43*1.1+100)*0.8, compraConEnvioYGarantia.getPrecioTotal(),DELTA);
 		
