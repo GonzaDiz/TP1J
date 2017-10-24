@@ -28,8 +28,7 @@ public class AlgoBayTest {
 
     @Test
     public void test02ObtenerProducto() {
-    	System.out.println("HOLA");
-
+    	
         AlgoBay algoBay = new AlgoBay();
 
         algoBay.agregarProductoConPrecio("Moto 5G", 4399);

@@ -29,7 +29,7 @@ public class Compra {
 		return precioTotal;
 	}
 
-	public void agregarProductoEnCompra(Producto producto) {
+	public void agregarProducto(Producto producto) {
 		productosAComprar.add(producto);
 		precioTotal = precioTotal + producto.getPrecio();
 	}

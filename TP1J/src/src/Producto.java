@@ -1,20 +1,23 @@
 package src;
 
+import excepciones.PrecioDeProductoNegativoError;
 
 public class Producto {
 	private String nombre;
-	private int precio;
+	private double precio;
 	
-	public Producto(String nombre, int precio) {
-		this.nombre = nombre;
+	public Producto(String nombre, double precio) {
+		if (precio < 0) throw new PrecioDeProductoNegativoError();
+		
 		this.precio = precio;
+		this.nombre = nombre;
 	}
-
+	
 	public Object getNombre() {
 		return nombre;
 	}
 
-	public int getPrecio() {
+	public double getPrecio() {
 		return precio;
 	}
 

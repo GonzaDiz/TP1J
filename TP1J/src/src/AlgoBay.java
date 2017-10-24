@@ -22,7 +22,7 @@ public class AlgoBay {
 	}
 
 	public void agregarProductoEnCompra(Producto producto, Compra compra) {
-		compra.agregarProductoEnCompra(producto);
+		compra.agregarProducto(producto);
 		
 	}
 

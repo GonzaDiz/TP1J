@@ -12,7 +12,7 @@ public class Catalogo {
 		this.productos = new ArrayList<Producto>();
 	}
 
-	public Producto agregarProductoConPrecio(String nombre,int precio) {
+	public Producto agregarProductoConPrecio(String nombre,double precio) {
 		Producto producto = new Producto(nombre,precio);
 		productos.add(producto);
 		return producto;

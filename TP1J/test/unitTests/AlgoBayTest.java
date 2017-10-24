@@ -73,7 +73,7 @@ public class AlgoBayTest {
 		AlgoBay algoBay = new AlgoBay();
 		Producto producto = algoBay.agregarProductoConPrecio("Spinner Azul", 100);
 		Compra compra = algoBay.crearNuevaCompra();
-		compra.agregarProductoEnCompra(producto);
+		compra.agregarProducto(producto);
 		Assert.assertEquals(100, algoBay.getPrecioTotalDe(compra),0);
 	}
 	
