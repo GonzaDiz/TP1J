@@ -2,7 +2,7 @@ package src;
 
 import java.util.ArrayList;
 
-import excepciones.NombreDeProductoErroneo;
+import excepciones.NombreDeProductoError;
 
 public class Catalogo {
 	
@@ -29,7 +29,7 @@ public class Catalogo {
 					return p;
 				}
 			}	
-			throw new NombreDeProductoErroneo();
+			throw new NombreDeProductoError();
 	}
 
 }

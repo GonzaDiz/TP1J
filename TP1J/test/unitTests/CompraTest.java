@@ -93,5 +93,24 @@ public class CompraTest {
 		Assert.assertEquals(400+100, compraConEnvio.getPrecioTotal(),DELTA);
 	}
 	
+	@Test
+	public void testGetPrecioTotalDeUnaCompraConEnvioGarantiaYCuponDe20() {
+		Compra compraConEnvioYGarantia = Compra.crearNuevaCompraConEnvioYGarantia();
+		Producto producto = new Producto("Resma A4", 499.43);
+		compraConEnvioYGarantia.agregarProducto(producto);
+		Cupon cupon = new ConCupon(20);
+		compraConEnvioYGarantia.agregarCupon(cupon);
+		Assert.assertEquals((499.43*1.1+100)*0.8, compraConEnvioYGarantia.getPrecioTotal(),DELTA);
+		
+	}
+	
+	@Test
+	public void testGetPrecioTotalDeUnaCompraConEnvioMayorA5000BonificaElEnvio() {
+		Compra compraConEnvio = Compra.crearNuevaCompraConEnvio();
+		Producto producto = new Producto ("Laptop DELL I7", 18999.99);
+		compraConEnvio.agregarProducto(producto);
+		Assert.assertEquals(18999.99,compraConEnvio.getPrecioTotal(),DELTA);
+	}
+	
 
 }

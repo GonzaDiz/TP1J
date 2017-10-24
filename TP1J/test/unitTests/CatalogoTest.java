@@ -5,7 +5,7 @@ package unitTests;
 import org.junit.Assert;
 import org.junit.Test;
 
-import excepciones.NombreDeProductoErroneo;
+import excepciones.NombreDeProductoError;
 import excepciones.PrecioDeProductoNegativoError;
 import src.Catalogo;
 import src.Producto;
@@ -19,8 +19,8 @@ public class CatalogoTest {
 		Assert.assertNotNull(producto);
 	}
 	
-	@Test(expected = NombreDeProductoErroneo.class)
-	public void testGetProductoDeUnProductoInexistenteLanzaUnaExcepcion() throws NombreDeProductoErroneo{
+	@Test(expected = NombreDeProductoError.class)
+	public void testGetProductoDeUnProductoInexistenteLanzaUnaExcepcion() throws NombreDeProductoError{
 		Catalogo catalogo = new Catalogo();
 		catalogo.agregarProductoConPrecio("Telefono G5",7000);
 		catalogo.getProducto("Telefono G3");

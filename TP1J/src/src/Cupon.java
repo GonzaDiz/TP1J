@@ -4,6 +4,6 @@ public abstract class Cupon {
 	
 	int porcentajeDescuento;
 
-	abstract double modificarPrecio(double precioTotal);
+	public abstract double modificarPrecio(double precioTotal);
 
 }
