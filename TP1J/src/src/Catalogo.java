@@ -2,6 +2,8 @@ package src;
 
 import java.util.ArrayList;
 
+import excepciones.NombreDeProductoErroneo;
+
 public class Catalogo {
 	
 	private ArrayList<Producto> productos;
@@ -20,19 +22,14 @@ public class Catalogo {
 		return productos.size();
 	}
 
-	public Producto getProducto(String nombre) {
-		try {
+	public Producto getProducto(String nombre)  {
+
 			for (Producto p : productos) {
 				if(nombre.equals(p.getNombre())) {
 					return p;
 				}
 			}	
 			throw new NombreDeProductoErroneo();
-		}
-		catch (NombreDeProductoErroneo ex) {
-			
-		}
-		return null;
 	}
 
 }

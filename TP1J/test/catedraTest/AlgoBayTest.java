@@ -28,6 +28,7 @@ public class AlgoBayTest {
 
     @Test
     public void test02ObtenerProducto() {
+    	System.out.println("HOLA");
 
         AlgoBay algoBay = new AlgoBay();
 

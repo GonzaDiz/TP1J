@@ -1,6 +1,6 @@
 package src;
 
-public class Envio extends Servicio {
+public class Envio implements Servicio {
 
 	public double modificarPrecio(double precio) {
 		if (precio > 5000) return precio;

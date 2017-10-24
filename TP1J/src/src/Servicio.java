@@ -1,6 +1,6 @@
 package src;
 
-abstract class Servicio {
+interface Servicio {
 	
 	abstract double modificarPrecio(double precio);
 
