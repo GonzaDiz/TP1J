@@ -64,7 +64,9 @@ public class Compra {
 	}
 
 	public void agregarCupon(Cupon cupon) {
-		this.cupon = cupon;
+		if (this.cupon.getPorcentajeDescuento() < cupon.getPorcentajeDescuento()) {
+			this.cupon = cupon;
+		}
 	}
 
 }

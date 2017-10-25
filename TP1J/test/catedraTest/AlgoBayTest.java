@@ -141,9 +141,9 @@ public class AlgoBayTest {
 
         Producto zapatilla = algoBay.agregarProductoConPrecio("Zapatilla", 2000);
         Compra compra = algoBay.crearNuevaCompra();
-        Cupon cupon20Porciento = algoBay.crearCuponConPorcentaje(20);
+        Cupon cupon20Porciento = algoBay.crearCuponConPorcentaje(30);
         Cupon cupon25Porciento = algoBay.crearCuponConPorcentaje(25);
-        Cupon cupon30Porciento = algoBay.crearCuponConPorcentaje(30);
+        Cupon cupon30Porciento = algoBay.crearCuponConPorcentaje(20);
 
         algoBay.agregarCuponEnCompra(cupon20Porciento, compra);
         algoBay.agregarCuponEnCompra(cupon25Porciento, compra);

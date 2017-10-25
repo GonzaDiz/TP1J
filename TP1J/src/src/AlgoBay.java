@@ -13,7 +13,7 @@ public class AlgoBay {
 		return catalogo.getCantidadDeProductos();
 	}
 
-	public Producto agregarProductoConPrecio(String nombre, int precio) {
+	public Producto agregarProductoConPrecio(String nombre, double precio) {
 		return catalogo.agregarProductoConPrecio(nombre,precio);
 	}
 

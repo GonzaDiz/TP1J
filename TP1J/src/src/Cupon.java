@@ -19,4 +19,8 @@ public  class Cupon {
 		return (precioTotal * (1 - (porcentajeDescuento/100.0)));
 	}
 
+	public int getPorcentajeDescuento() {
+		return porcentajeDescuento;
+	}
+
 }

@@ -111,5 +111,19 @@ public class CompraTest {
 		Assert.assertEquals(18999.99,compraConEnvio.getPrecioTotal(),DELTA);
 	}
 	
+	@Test
+	public void agregarVariosCuponesSoloValeElMayor() {
+		Compra compra = Compra.crearNuevaCompra();
+		Producto producto = new Producto ("Abrochadora",200);
+		Cupon cupon1 = new Cupon(30);
+		Cupon cupon2 = new Cupon(20);
+		Cupon cupon3 = new Cupon(10);
+		compra.agregarProducto(producto);
+		compra.agregarCupon(cupon2);
+		compra.agregarCupon(cupon1);
+		compra.agregarCupon(cupon3);
+		Assert.assertEquals(200 * 0.7, compra.getPrecioTotal(), 0);
+	}
+	
 
 }
