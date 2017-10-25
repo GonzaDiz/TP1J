@@ -15,8 +15,8 @@ public  class Cupon {
 		this.porcentajeDescuento = porcentaje;
 	}
 	
-	public double modificarPrecio(double precioTotal) {
-		return (precioTotal * (1 - (porcentajeDescuento/100.0)));
+	public double modificarPrecio(double precio) {
+		return (precio * (1 - (porcentajeDescuento/100.0)));
 	}
 
 	public int getPorcentajeDescuento() {

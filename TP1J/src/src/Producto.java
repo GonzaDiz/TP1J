@@ -13,7 +13,7 @@ public class Producto {
 		this.nombre = nombre;
 	}
 	
-	public Object getNombre() {
+	public String getNombre() {
 		return nombre;
 	}
 
