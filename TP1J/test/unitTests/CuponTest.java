@@ -23,12 +23,12 @@ public class CuponTest {
 	
 	@Test(expected = PorcentajeInvalidoError.class)
 	public void testCrearUnCuponConPorcentajeNegativoLanzaLaExcepcionPorcentajeInvalidoError() {
-		Cupon cupon = new Cupon(-40);
+		 new Cupon(-40);
 	}
 	
 	@Test(expected = PorcentajeInvalidoError.class)
 	public void testCrearUnCuponConPorcentajeMayorA100LanzaPorcentajeInvalidoError(){
-		Cupon cupon = new Cupon(110);
+		new Cupon(110);
 	}
 
 }

@@ -16,8 +16,7 @@ public class ProductoTest {
 	
 	@Test(expected = PrecioDeProductoNegativoError.class)
 	public void testCrearUnProductoConPrecioNegativoLanzaPrecioDeProductoNegativoError() {
-		@SuppressWarnings("unused")
-		Producto producto = new Producto("Mouse Sentey",-4);
+		new Producto("Mouse Sentey",-4);
 	}
 
 }
